@@ -9,7 +9,7 @@ EatenSnack.destory_all
 
 
 
-api_response = RestClient.get(##whichever is the best)
+api_response = RestClient.get(https://api.edamam.com/search)
 api_data = JSON.parse(api_response)
  
 binding.pry 
