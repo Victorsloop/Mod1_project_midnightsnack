@@ -6,4 +6,5 @@ require 'pry'
 puts "HELLO WORLD"
 cli = CLI.new
 cli.welcome 
+cli.get_username 
 binding.pry
