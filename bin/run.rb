@@ -7,4 +7,5 @@ puts "HELLO WORLD"
 cli = CLI.new
 cli.welcome 
 cli.get_username 
+cli.display_menu 
 binding.pry
