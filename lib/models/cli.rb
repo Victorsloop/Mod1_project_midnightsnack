@@ -46,13 +46,24 @@ class CLI
     def display_menu 
         @@prompt = TTY::Prompt.new 
         welcome = @@prompt.select("I see youre up for a midnight snack..again",active_color: :on_blue) do |menu|
-            menu.choice 'Go through your fridge'
-            menu.choice 'Go through your pantry'
+            menu.choice 'Go through your fridge/pantry'
             menu.choice 'Favorite Recipies'
             menu.choice 'hEaLtH'
             menu.choice 'Delete Recipies'
         end 
+        if welcome == 'Go through your fridge/pantry'
+            puts "method 1"
+        elsif welcome == 'Favorite Recipies'
+            puts "you chose option 2"
+        elsif  welcome == 'hEaLtH'
+            puts "Will count those calories"
+        elsif welcome == 'Delete Recipies'
+            puts "will delete them recipies "
+        end 
     end 
+
+
+
         ##Here we will display our options to the snacker 
         ##choices = { "Search the fridge" => 1,
     #         "Search the pantry " => 2, 
