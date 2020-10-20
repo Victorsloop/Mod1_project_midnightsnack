@@ -12,14 +12,14 @@ Ingredient.create(name: "eggs", quantity: 6.0, calories: 500)
 def get_all_recipes
     page_number = 1
     recipe_array = []
-    5.times do 
+    100.times do 
         all_recipes = RestClient.get("http://www.recipepuppy.com/api/?i=&q=&p=#{page_number}")
         recipe_hash = JSON.parse(all_recipes)
         page_number += 1
-        recipe_array << recipe_hash
-        binding.pry
+        recipe_array << recipe_hash["results"]
+        #binding.pry
     end
-    recipe_array
+    recipe_array = recipe_array.flatten
     binding.pry
     puts "hello"
 end
