@@ -9,3 +9,5 @@ cli.welcome
 cli.get_username 
 cli.display_menu 
 binding.pry
+
+puts "new commit push"
