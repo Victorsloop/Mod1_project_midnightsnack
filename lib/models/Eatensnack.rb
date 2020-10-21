@@ -1,4 +1,4 @@
 class EatenSnack < ActiveRecord::Base
     belongs_to :snackers
-    has_many :ingredients
+    belongs_to :recipes
 end

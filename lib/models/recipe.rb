@@ -1,5 +1,5 @@
 class Recipe < ActiveRecord::Base
     has_many :snackers, through: :ingredients
     has_many :ingredients
-    belongs_to :eaten_snacks
+    has_many :eaten_snacks
 end

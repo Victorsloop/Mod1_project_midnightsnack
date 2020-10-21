@@ -1,5 +1,5 @@
 class Snacker < ActiveRecord::Base
-    has_many :recipes
-    has_many :eaten_snacks
-    has_many :ingredients, through: :recipes
+    has_many :eaten_snacks, through: :recipes
+    has_many :recipes, through: :ingredients
+    has_many :ingredients
 end
