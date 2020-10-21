@@ -13,7 +13,6 @@ def my_favorites
         i += 1
         sleep(0.5)
       end
-      puts
       puts "Returning to main menu..."
       display_menu
     end
