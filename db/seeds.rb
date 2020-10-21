@@ -6,6 +6,10 @@ Ingredient.destroy_all
 # FavoriteIngredient.destroy_all
 EatenSnack.destroy_all
 
+Ingredient.create(name: "eggs")
+
+
+
 
 
 

@@ -12,4 +12,4 @@ gem "rake"
 gem "ruby2d"
 gem 'tty-font'
 gem 'pastel'
-gem 'recipe_puppy'
+ gem 'recipe_puppy'
