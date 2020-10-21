@@ -3,7 +3,7 @@ require 'rest-client' # let you actually make the requests to the URLs
 require 'json'
 Snacker.destroy_all
 Ingredient.destroy_all
-FavoriteIngredient.destroy_all
+# FavoriteIngredient.destroy_all
 EatenSnack.destroy_all
 
 
