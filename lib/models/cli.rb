@@ -55,7 +55,7 @@ class CLI
         if welcome == 'Go through your fridge/pantry'
             puts "method 1"
         elsif welcome == 'Favorite Recipies'
-            puts "you chose option 2"
+            my_favorites
         elsif  welcome == 'hEaLtH'
             puts "Will count those calories"
         elsif welcome == 'Delete Recipies'
