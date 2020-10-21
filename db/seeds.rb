@@ -9,20 +9,33 @@ EatenSnack.destroy_all
 Ingredient.create(name: "eggs", quantity: 6.0, calories: 500)
 
 
-def get_all_recipes
+def get_snacks
     page_number = 1
-    recipe_array = []
-    100.times do 
-        all_recipes = RestClient.get("http://www.recipepuppy.com/api/?i=&q=&p=#{page_number}")
-        recipe_hash = JSON.parse(all_recipes)
+    snack_array = []
+    80.times do 
+        all_snacks = RestClient.get("http://www.recipepuppy.com/api/?i=&q=&p=#{page_number}")
+        snack_hash = JSON.parse(all_snacks)
         page_number += 1
-        recipe_array << recipe_hash["results"]
+        # binding.pry
+        snack_array << snack_hash["results"]
+    end
+    snack_array = snack_array.flatten
+
+    #binding.pry
+
+    snack_array.each do |snack|
+        #binding.pry
+        EatenSnack.create(
+        name: snack["title"]
+        )
         #binding.pry
     end
-    recipe_array = recipe_array.flatten
-    binding.pry
+    # binding.pry
     puts "hello"
+    puts "hello"
+    # binding.pry
+
 end
 
+
 binding.pry
-puts "hello"
