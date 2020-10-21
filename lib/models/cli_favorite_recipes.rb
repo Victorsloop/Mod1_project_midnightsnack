@@ -1,5 +1,5 @@
 def my_favorites
-    favorites = username.favorite_recipe
+    favorites = username.ingredient
   
     if favorites.empty?
       puts "You don't have any favorite recipies saved yet!"
@@ -9,7 +9,7 @@ def my_favorites
       puts "Here are your favorite recipes:"
       i = 1
       faves.each do |fave|
-        puts "#{i}. #{fave.favorite_recipe.name}"
+        puts "#{i}. #{fave.ingredients.name}"
         i += 1
         sleep(0.5)
       end
