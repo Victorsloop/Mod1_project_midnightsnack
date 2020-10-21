@@ -1,5 +1,4 @@
 require 'rubygems'
-require 'recipe_puppy'
 require 'pry'
 
 

@@ -2,12 +2,11 @@ require 'pry'
 require 'rest-client' # let you actually make the requests to the URLs 
 require 'json'
 Snacker.destroy_all
-Ingredient.destroy_all
+Recipe.destroy_all
 # FavoriteIngredient.destroy_all
-EatenSnack.destroy_all
+FavoriteSnack.destroy_all
 
-Ingredient.create(name: "eggs")
-
+#
 
 
 
@@ -16,7 +15,7 @@ Ingredient.create(name: "eggs")
 def get_snacks
     page_number = 1
     snack_array = []
-    1.times do 
+    80.times do 
         all_snacks = RestClient.get("http://www.recipepuppy.com/api/?i=&q=&p=#{page_number}")
         snack_hash = JSON.parse(all_snacks)
         page_number += 1
@@ -29,15 +28,11 @@ def get_snacks
 
     snack_array.each do |snack|
         #binding.pry
-        EatenSnack.create(
-        name: snack["title"]
+        Recipe.create(
+        name: snack["title"],
+        ingredients: snack["ingredients"]
         )
         #binding.pry
-    end
-    snack_array.each do |snack|
-        Ingredient.create(
-            name: snack["ingredients"]
-        )
     end
 end
 
