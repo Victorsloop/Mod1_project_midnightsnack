@@ -6,13 +6,13 @@ Ingredient.destroy_all
 FavoriteIngredient.destroy_all
 EatenSnack.destroy_all
 
-Ingredient.create(name: "eggs", quantity: 6.0, calories: 500)
+
 
 
 def get_snacks
     page_number = 1
     snack_array = []
-    80.times do 
+    1.times do 
         all_snacks = RestClient.get("http://www.recipepuppy.com/api/?i=&q=&p=#{page_number}")
         snack_hash = JSON.parse(all_snacks)
         page_number += 1
@@ -30,12 +30,20 @@ def get_snacks
         )
         #binding.pry
     end
+    snack_array.each do |snack|
+        Ingredient.create(
+            name: snack["ingredients"]
+        )
+    end
+end
+
+
+    
     # binding.pry
     puts "hello"
     puts "hello"
     # binding.pry
 
-end
 
 
 binding.pry
