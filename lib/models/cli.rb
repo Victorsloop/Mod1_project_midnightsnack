@@ -4,6 +4,7 @@ class CLI
     @@prompt = TTY::Prompt.new
     @@user = nil 
     def welcome 
+        puts kitchen 
         font = TTY::Font.new(:starwars)
         pastel = Pastel.new
         puts pastel.blue(font.write ("Midnight Snack"))
@@ -17,7 +18,7 @@ class CLI
         if choice == "y"
             username 
         elsif choice == "n"
-            puts "Create user name method"
+            new_user 
         else 
             puts "Please enter either y/n"
             get_username ##Method restarts since they did not enter yes or no
@@ -46,13 +47,30 @@ class CLI
     def display_menu 
         @@prompt = TTY::Prompt.new 
         welcome = @@prompt.select("I see youre up for a midnight snack..again",active_color: :on_blue) do |menu|
-            menu.choice 'Go through your fridge'
-            menu.choice 'Go through your pantry'
+            menu.choice 'Go through your fridge/pantry'
             menu.choice 'Favorite Recipies'
             menu.choice 'hEaLtH'
             menu.choice 'Delete Recipies'
         end 
+        if welcome == 'Go through your fridge/pantry'
+            puts "method 1"
+        elsif welcome == 'Favorite Recipies'
+            puts "you chose option 2"
+        elsif  welcome == 'hEaLtH'
+            puts "Will count those calories"
+        elsif welcome == 'Delete Recipies'
+            puts "will delete them recipies "
+        end 
     end 
+
+    def kitchen 
+        ## Basically will be a textart that will be called in the front to make our image prettier 
+        
+    end 
+
+   
+
+
         ##Here we will display our options to the snacker 
         ##choices = { "Search the fridge" => 1,
     #         "Search the pantry " => 2, 
