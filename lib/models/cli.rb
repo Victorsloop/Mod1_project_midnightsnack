@@ -26,10 +26,10 @@ class CLI
     def self.menu
         prompt = TTY::Prompt.new
         sleep(1)
-        display_menu = prompt.select ("Are you a returning snacker or is this your first time ? ") do |option|
-            option.choice "Returning snacker"
-            option.choice "First timer"
-            option.choice "Go back to bed"
+        display_menu = prompt.select ("Are you a returning snacker or is this your first time ? ") do |menu|
+            menu.choice "Returning snacker"
+            menu.choice "First timer"
+            menu.choice "Go back to bed"
         end
         if display_menu == "Returning Snacker"
             system("clear")
@@ -38,7 +38,7 @@ class CLI
             system("clear")
             CLI.create_account
         elsif display_menu == "Go to bed"
-            exit!
+            CLI.go_to_bed
         end
     end
 
@@ -61,36 +61,37 @@ class CLI
         password = prompt.mask("Magic word?")
         if Snacker.find_by(username: username, password: password)
             @snacker = Snacker.find_by(username: username, password: password)
-            CLI.display_menu
+            CLI.snacker_menu
         elsif
             system("clear")
-            missing_player = prompt.select("Username or Password not found.") do |option|
-                option.choice "Log In"
-                option.choice "Create an Account"
+            never_met_you = prompt.select("Username or Password not found.") do |menu|
+                menu.choice "Log In"
+                menu.choice "Create an Account"
                 system("clear")
             end
-         end
-        if missing_player == "Log In"
-            system("clear")
-            CLI.login
-        elsif missing_player == "Create an Account"
-            system("clear")
-            CLI.create_account
-        end
+        end 
+        #  end
+        # if missing_player == "Log In"
+        #     system("clear")
+        #     CLI.login
+        # elsif missing_player == "Create an Account"
+        #     system("clear")
+        #     CLI.create_account
+        # end
     end
 
     def self.go_to_bed
         prompt = TTY::Prompt.new
         @snacker = nil
         puts "Have a good night ."
-        prompt.keypress("\nPress to return to main menu.", keys: [:space, :return])
+        prompt.keypress("\nPress r to return to main menu.", keys: [:"r", :return])
         CLI.menu
     end
 
     # Snacker menuuu
     def self.snacker_menu
         prompt = TTY::Prompt.new
-        puts "Welcome back #{@snacker}!!!"
+        puts "Welcome back #{@snacker.username}!!!"
         select = prompt.select("What would you like to do?") do |menu|
             menu.choice 'Go through your fridge/pantry'
             menu.choice 'Favorite Recipies'
@@ -106,10 +107,9 @@ class CLI
             puts "Will count those calories"
         elsif   select  == 'Delete Recipies'
             puts "will delete them recipies "
-        elsif select == "Log Out"
+        elsif select == "Go to bed.."
             system("clear")
             CLI.go_to_bed
-        elsif select == "Go to bed.."
             exit!
         end
     end
