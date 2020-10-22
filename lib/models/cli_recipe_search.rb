@@ -54,15 +54,27 @@ def snack_menu
   puts "1. Return to main menu"
   puts "2. Save a snack to favorites"
   choice = gets.chomp
-  if  choice == 1
+  if choice == 1
     self.snacker_menu ## Returns to start
-  elsif choice == 2 
+  if choice == 2 
     save_snack
-  else 
+  else   
     puts "Invalid choice!"
     true
   end
 end
+
+def favorites_has_recipe?(recipe)
+  @snacker.favorite_snacks.each do |fave|
+    if fave.recipe_id == recipe.id
+      true
+    end
+  end
+  false
+end
+
+      
+
 
 # def add_favorite_snack(recipe)
 #   FavoriteSnack.create(snacker_id: self.id, recipe_id: recipe.id)
@@ -72,9 +84,17 @@ def save_snack(snacker_recipes)
   puts "Enter the number of the snack you'd like to save"
   snack_choice = gets.chomp
   recipe = snacker_recipes[snack_choice.to_i-1]
-  @snacker.add_favorite_snack(recipe)
-  # binding.pry
+  if favorites_has_recipe?(recipe)
+    puts "You've already saved this snack"
+  else
+    @snacker.add_favorite_snack(recipe)
+  end
 end
+
+# def view_favorite_snacks
+#     @snacker.favoritesnacks
+# end
+
 # binding.pry
 
 # def add_favorite_snack(recipe)
@@ -112,7 +132,7 @@ end
       
 
 
-
+end
 
 # binding.pry
 
