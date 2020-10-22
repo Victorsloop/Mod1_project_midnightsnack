@@ -46,7 +46,7 @@ require 'pry'
       
       def saved_favorites?(recipe)
         # checks favorites to make sure it hasn't been added yet
-        username.favorites.each do |fav|
+        username.favoritesnack.each do |fav|
           if fav.recipe_id == recipe.id
             return true
           end
