@@ -15,7 +15,7 @@ FavoriteSnack.destroy_all
 def get_snacks
     page_number = 1
     snack_array = []
-    80.times do 
+    1.times do 
         all_snacks = RestClient.get("http://www.recipepuppy.com/api/?i=&q=&p=#{page_number}")
         snack_hash = JSON.parse(all_snacks)
         page_number += 1
@@ -30,18 +30,28 @@ def get_snacks
         #binding.pry
         Recipe.create(
         name: snack["title"],
-        ingredients: snack["ingredients"]
+        ingredients: snack["ingredients"].split(", ")
         )
         #binding.pry
     end
 end
 
 
-    
-    # binding.pry
-    puts "hello"
-    puts "hello"
-    # binding.pry
+
+
+def recipe_search(snack_ingredient)
+    results_array = []
+    Recipe.all.select do |snack|
+        snack.ingredients.split(",").find do |ingredient_instance|
+            if ingredient_instance.split == snack_ingredient ||
+                ingredient_instance.strip == (snack_ingredient + " ") ||
+                ingredient_instance.strip == (" " + snack_ingredient)
+                results_array << recipe
+            end
+        end
+    end
+end
+
 
 
 

@@ -66,9 +66,9 @@ class CLI
     def fridge_pantry
         puts "What ingredient did you find ? :"
         ingredient = gets.chomp
-        ingredient.to_s
-        Ingredient.create(name: ingredient)
+        Recipe.where(ingredients: ingredient).any?
     end
+
 
     def kitchen 
         ## Basically will be a textart that will be called in the front to make our image prettier 
