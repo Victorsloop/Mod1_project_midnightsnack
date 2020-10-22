@@ -6,7 +6,8 @@ def search
   snack_array = all_recipe(snack_ingredient)
   limit = recipe_limit(snack_array, snack_ingredient)
   snacker_recipes = view_recipes(snack_array, limit)
-  # choices = recipe_menu
+  choice = snack_menu 
+  save_snack(snacker_recipes)
   # recipe_menu
   # display_menu
 end
@@ -47,22 +48,47 @@ def view_recipes(snack_array, limit)
     puts "#{recipe.ingredients}"
   end
 end
-      
-      # def recipe_menu
-      #   puts "Please choose one:"
-      #   puts "1. Return to main menu"
-      #   puts "2. Save a recipe to favorites"
-      #   choice = gets.chomp
-      #   if  "1"
-      #     false ## Returns to start
-      #   elsif "2" 
-      #       "saving to fav method"
-      #     true
-      #   else
-      #     puts "Invalid choice!"
-      #     true
-      #   end
-      # end
+
+def snack_menu
+  puts "Please choose one:"
+  puts "1. Return to main menu"
+  puts "2. Save a snack to favorites"
+  choice = gets.chomp
+  if  choice == 1
+    self.snacker_menu ## Returns to start
+  elsif choice == 2 
+    save_snack
+  else 
+    puts "Invalid choice!"
+    true
+  end
+end
+
+# def add_favorite_snack(recipe)
+#   FavoriteSnack.create(snacker_id: self.id, recipe_id: recipe.id)
+# end
+
+def save_snack(snacker_recipes)
+  puts "Enter the number of the snack you'd like to save"
+  snack_choice = gets.chomp
+  recipe = snacker_recipes[snack_choice.to_i-1]
+  @snacker.add_favorite_snack(recipe)
+  # binding.pry
+end
+# binding.pry
+
+# def add_favorite_snack(recipe)
+#   FavoriteSnack.create(recipe_id: recipe.id, snacker_id: self.id)
+# end
+
+
+
+
+
+# def save_a_fave_snack(snacker_recipes, )
+#   binding.pry
+# end
+
       
       # def saved_favorites?(recipe)
       #   # checks favorites to make sure it hasn't been added yet

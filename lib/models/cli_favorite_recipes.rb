@@ -18,3 +18,8 @@ def my_favorites
     end
   
   end
+
+  # def add_favorite_snack(recipe)
+  #   fave_snack = FavoriteSnack.create(recipe_id: recipe.id, snacker_id: self.id)
+  # end
+
