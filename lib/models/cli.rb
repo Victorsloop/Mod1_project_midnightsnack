@@ -2,9 +2,9 @@ require 'pry'
 require 'tty-prompt'
 class CLI 
 
-    attr_accessor :snacker
-    @@prompt = TTY::Prompt.new
-    @@user = nil 
+    attr_accessor :snacker, :recipie, :favoritesnack
+    #@@prompt = TTY::Prompt.new
+    #@@user = nil 
 
     def start
         welcome
@@ -31,14 +31,14 @@ class CLI
             menu.choice "First timer"
             menu.choice "Go back to bed"
         end
-        if display_menu == "Returning Snacker"
+        if display_menu == "Returning snacker"
             system("clear")
             CLI.login
         elsif display_menu == "First timer"
             system("clear")
             CLI.create_account
         elsif display_menu == "Go to bed"
-            CLI.go_to_bed
+            exit!
         end
     end
 
@@ -61,7 +61,8 @@ class CLI
         password = prompt.mask("Magic word?")
         if Snacker.find_by(username: username, password: password)
             @snacker = Snacker.find_by(username: username, password: password)
-            CLI.snacker_menu
+            @snacker
+         CLI.snacker_menu
         elsif
             system("clear")
             never_met_you = prompt.select("Username or Password not found.") do |menu|
@@ -69,15 +70,14 @@ class CLI
                 menu.choice "Create an Account"
                 system("clear")
             end
-        end 
-        #  end
-        # if missing_player == "Log In"
-        #     system("clear")
-        #     CLI.login
-        # elsif missing_player == "Create an Account"
-        #     system("clear")
-        #     CLI.create_account
-        # end
+         end 
+         if never_met_you == "Log In"
+             system("clear")
+             CLI.login
+         elsif never_met_you == "Create an Account"
+             system("clear")
+             CLI.create_account
+         end
     end
 
     def self.go_to_bed
