@@ -1,5 +1,5 @@
-require 'rubygems'
-require 'pry'
+# require 'rubygems'
+# require 'pry'
 
 
     def fridge_pantry
@@ -19,6 +19,7 @@ require 'pry'
         end
         return arr.uniq
       end
+    end 
 
       def view_recipes(all_recipe, limit)
         puts "Here are your recipes!"
@@ -61,8 +62,8 @@ require 'pry'
 # binding.pry
 
 
-def recipie_search
-end 
+# def recipie_search
+# end 
 
 # Simple Search
 # steakrecipes = RecipePuppy::Recipe.search_for("steak")
