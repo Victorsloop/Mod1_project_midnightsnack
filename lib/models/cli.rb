@@ -26,7 +26,7 @@ class CLI
     end 
 
     def username  ## Method for checking the name or a returning snacker
-        puts "Please enter your name:"
+        puts "Whats your name ? "
         username = gets.chomp 
         user = Snacker.find_by(name: username)
         if user == nil 
@@ -60,7 +60,7 @@ class CLI
     end 
 
     def username_taken(name)
-        if Snacker.find_by(name :name) != nil
+        if Snacker.find_by(name: name) != nil
             puts "This account already exists"
             puts "Are you.. 1.sure about this name or would you like to 2.create a new one ?"
             choice = gets.chomp 
