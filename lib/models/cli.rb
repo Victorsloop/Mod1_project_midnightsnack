@@ -87,7 +87,7 @@ class CLI
             menu.choice 'Delete Recipies'
         end 
         if welcome == 'Go through your fridge/pantry'
-            puts "method 1"
+            search
         elsif welcome == 'Favorite Recipies'
             my_favorites
         elsif  welcome == 'hEaLtH'
@@ -97,12 +97,12 @@ class CLI
         end 
     end
     
-    def fridge_pantry
-        puts "What ingredient did you find ? :"
-        ingredient = gets.chomp
-        ingredient.to_s
-        Ingredient.create(name: ingredient)
-    end
+    # def fridge_pantry
+    #     puts "What ingredient did you find ? :"
+    #     ingredient = gets.chomp
+    #     ingredient.to_s
+    #     Ingredient.create(name: ingredient)
+    # end
 
     def kitchen 
         ## Basically will be a textart that will be called in the front to make our image prettier 

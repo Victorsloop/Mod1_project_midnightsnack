@@ -54,6 +54,15 @@
         end
         false
       end
+
+      def search
+        ingredient = fridge_pantry
+        recipes = all_recipe
+        snacker_recipes = view_recipes(all_recipe, limit)
+        choices = recipe_menu
+        recipe_menu
+        display_menu 
+      end
       
 
 
