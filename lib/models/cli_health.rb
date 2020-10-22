@@ -26,7 +26,7 @@
             weight < 800 
             puts "Youre playing a risky game, but treat yourself! 😳"
         end 
-        end# End of the code 
+    end # End of the code 
 
     def gain ## Just funny methods we might use 
     end 
