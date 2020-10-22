@@ -1,24 +1,6 @@
 # require 'rubygems'
 # require 'pry'
 
-<<<<<<< HEAD
-
-    def fridge_pantry
-        puts "What did you find raiding the fridge and or pantry??? "
-        ingredient = gets.chomp
-    #ingredient.to_s
-    #Ingredient.create(name: ingredient)
-    end 
-
-    def all_recipe(snack_ingredient)
-      snack_array = []
-      Recipe.all.select do |recipe|
-        recipe.ingredients.split(",").find do |ingredient|      
-            if ingredient.strip == snack_ingredient      
-                snack_array << recipe
-            end
-        end
-=======
 def search
   snack_ingredient = fridge_pantry
   snack_array = all_recipe(snack_ingredient)
@@ -43,7 +25,6 @@ def all_recipe(snack_ingredient)
       if ingredient.strip == snack_ingredient
         snack_array << recipe
       end
->>>>>>> 13e6668d9c63282a23cf9699ee4bc03758b1d64d
     end
   end
 end
@@ -83,27 +64,6 @@ end
       #   end
       # end
       
-<<<<<<< HEAD
-      def saved_favorites?(recipe)
-        # checks favorites to make sure it hasn't been added yet
-        username.favoritesnack.each do |fav|
-          if fav.recipe_id == recipe.id
-            return true
-          end
-        end
-        false
-      end
-
-      def search
-        ingredient = fridge_pantry
-        recipes = all_recipe
-        snacker_recipes = view_recipes(all_recipe, limit)
-        choices = recipe_menu
-        recipe_menu
-        display_menu 
-      end
-    end 
-=======
       # def saved_favorites?(recipe)
       #   # checks favorites to make sure it hasn't been added yet
       #   username.favoritesnack.each do |fav|
@@ -123,7 +83,6 @@ end
       #   display_menu 
       # end
       
->>>>>>> 13e6668d9c63282a23cf9699ee4bc03758b1d64d
 
 
 
