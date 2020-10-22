@@ -33,9 +33,9 @@ require 'pry'
         puts "1. Return to main menu"
         puts "2. Save a recipe to favorites"
         choice = gets.chomp
-        when "1"
+        if  "1"
           false ## Returns to start
-        when "2" 
+        elsif "2" 
             "saving to fav method"
           true
         else
