@@ -30,7 +30,7 @@ def get_snacks
         #binding.pry
         Recipe.create(
         name: snack["title"],
-        ingredients: snack["ingredients"].split(", ")
+        ingredients: snack["ingredients"]
         )
         #binding.pry
     end
@@ -38,19 +38,6 @@ end
 
 
 
-
-def recipe_search(snack_ingredient)
-    results_array = []
-    Recipe.all.select do |snack|
-        snack.ingredients.split(",").find do |ingredient_instance|
-            if ingredient_instance.split == snack_ingredient ||
-                ingredient_instance.strip == (snack_ingredient + " ") ||
-                ingredient_instance.strip == (" " + snack_ingredient)
-                results_array << recipe
-            end
-        end
-    end
-end
 
 
 
