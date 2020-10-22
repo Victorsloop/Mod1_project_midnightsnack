@@ -50,29 +50,52 @@ end
       
 def recipe_menu
   puts "Please choose one:"
-        puts "1. Return to main menu"
-        puts "2. Save a recipe to favorites"
-        choice = gets.chomp
-        if  "1"
-          false ## Returns to start
-        elsif "2" 
-            "saving to fav method"
-          true
-        else
-          puts "Invalid choice!"
-          true
+  puts "1. Return to main menu"
+  puts "2. Save a recipe to favorites"
+  choice = gets.chomp
+  if  "1"
+    false ## Returns to start
+  elsif "2" 
+    "saving to fav method"
+    true
+  else
+    puts "Invalid choice!"
+    true
         end
       end
       
-      def saved_favorites?(recipe)
-        # checks favorites to make sure it hasn't been added yet
-        username.favoritesnack.each do |fav|
-          if fav.recipe_id == recipe.id
-            return true
-          end
-        end
-        false
-      end
+
+    #   def saved_favorites?(recipe)
+    #     # checks favorites to make sure it hasn't been added yet
+    #     username.favoritesnack.each do |fav|
+    #       if fav.recipe_id == recipe.id
+    #         return true
+    #       end
+    #     end
+    #     false
+    #   end
+
+
+    #   def search
+    #     ingredient = fridge_pantry
+    #     recipes = all_recipe
+    #     snacker_recipes = view_recipes(all_recipe, limit)
+    #     choices = recipe_menu
+    #     recipe_menu
+    #     display_menu 
+    #   end
+    # end 
+
+      # def saved_favorites?(recipe)
+      #   # checks favorites to make sure it hasn't been added yet
+      #   username.favoritesnack.each do |fav|
+      #     if fav.recipe_id == recipe.id
+      #       return true
+      #     end
+      #   end
+      #   false
+      # end
+
 
       # def search
       #   snack_ingredient = fridge_pantry
@@ -110,6 +133,3 @@ def recipe_menu
 #     # puts "What recipe would you like to save?"
 #     # saved_recipe = gets.chomp
 # end
-
-
-
