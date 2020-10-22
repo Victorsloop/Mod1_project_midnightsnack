@@ -106,6 +106,7 @@ class CLI
             puts "Will count those calories"
         elsif   select  == 'Delete Recipies'
             puts "will delete them recipies "
+<<<<<<< HEAD
         elsif select == "Log Out"
             system("clear")
             CLI.go_to_bed
@@ -114,3 +115,57 @@ class CLI
         end
     end
 end #This is the end for the code 
+=======
+        end 
+    end
+    
+    def recipe_search
+        snack_ingredient = fridge_pantry
+        snack_array = all_recipe(snack_ingredient)
+    end
+
+    # def fridge_pantry
+    #     puts "What ingredient did you find ? :"
+    #     snack_ingredient = gets.chomp
+    # end
+
+    # def all_recipe(snack_ingredient)
+    #     snack_array = []
+    #     Recipe.all.select do |recipe|
+    #         recipe.ingredients.split(",").find do |ingredient|
+    #             if ingredient.strip == snack_ingredient
+    #                 snack_array << recipe
+    #             end
+    #         end
+    #     end
+    # end
+
+
+
+
+    def kitchen 
+        ## Basically will be a textart that will be called in the front to make our image prettier 
+        
+    end
+
+
+   
+
+
+        ##Here we will display our options to the snacker 
+        ##choices = { "Search the fridge" => 1,
+    #         "Search the pantry " => 2, 
+    #         "Favorite recipies" => 3,
+    #         "hEalTh" => 4,
+    #         "Go to Sleep" => 5
+    #     }
+    # action = @@prompt.select("What would you like to do?", choices)
+    #     case action
+    #     when 1
+
+
+
+
+ #This is the end for the code 
+end
+>>>>>>> 13e6668d9c63282a23cf9699ee4bc03758b1d64d
