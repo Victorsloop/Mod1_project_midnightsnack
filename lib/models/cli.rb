@@ -88,7 +88,7 @@ class CLI
     end
 
     # Snacker menuuu
-    def self.sancker_menu
+    def self.snacker_menu
         prompt = TTY::Prompt.new
         puts "Welcome back #{@snacker}!!!"
         select = prompt.select("What would you like to do?") do |menu|
