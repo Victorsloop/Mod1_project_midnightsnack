@@ -15,7 +15,7 @@ FavoriteSnack.destroy_all
 def get_snacks
     page_number = 1
     snack_array = []
-    80.times do 
+    1.times do 
         all_snacks = RestClient.get("http://www.recipepuppy.com/api/?i=&q=&p=#{page_number}")
         snack_hash = JSON.parse(all_snacks)
         page_number += 1
@@ -37,11 +37,8 @@ def get_snacks
 end
 
 
-    
-    # binding.pry
-    puts "hello"
-    puts "hello"
-    # binding.pry
+
+
 
 
 

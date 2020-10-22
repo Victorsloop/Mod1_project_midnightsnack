@@ -9,17 +9,18 @@
     #Ingredient.create(name: ingredient)
     end 
 
-    def all_recipe
-        all = [] ## Meant to hold all recipes
-        Recipe.all.select do |recipe|
-          recipe.ingredients.split(",").find do |ing|
-            if ing == ingredient 
-              all << recipe
+    def all_recipe(snack_ingredient)
+      snack_array = []
+      Recipe.all.select do |recipe|
+        recipe.ingredients.split(",").find do |ingredient|      
+            if ingredient.strip == snack_ingredient      
+                snack_array << recipe
             end
+          end
         end
-        return arr.uniq
       end
-    end 
+    end
+
 
       def view_recipes(all_recipe, limit)
         puts "Here are your recipes!"

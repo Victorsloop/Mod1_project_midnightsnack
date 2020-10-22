@@ -97,12 +97,21 @@ class CLI
         end 
     end
     
+<<<<<<< HEAD
     # def fridge_pantry
     #     puts "What ingredient did you find ? :"
     #     ingredient = gets.chomp
     #     ingredient.to_s
     #     Ingredient.create(name: ingredient)
     # end
+=======
+    def fridge_pantry
+        puts "What ingredient did you find ? :"
+        ingredient = gets.chomp
+        Recipe.where(ingredients: ingredient).any?
+    end
+>>>>>>> 6cb76693f9ec001a3002e60e5254b4619dedd628
+
 
     def kitchen 
         ## Basically will be a textart that will be called in the front to make our image prettier 
