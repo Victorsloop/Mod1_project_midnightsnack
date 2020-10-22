@@ -16,9 +16,7 @@
             if ingredient.strip == snack_ingredient      
                 snack_array << recipe
             end
-          end
         end
-      end
     end
 
 
@@ -64,7 +62,7 @@
         recipe_menu
         display_menu 
       end
-      
+    end 
 
 
 
@@ -92,6 +90,3 @@
 #     # puts "What recipe would you like to save?"
 #     # saved_recipe = gets.chomp
 # end
-
-
-
