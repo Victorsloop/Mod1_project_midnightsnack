@@ -9,6 +9,6 @@ cli.welcome
 cli.get_username 
 cli.display_menu 
 cli.new_user
-cli.fridge_pantry
+cli.recipe_search
 binding.pry
 

@@ -97,26 +97,35 @@ class CLI
         end 
     end
     
-<<<<<<< HEAD
+    def recipe_search
+        snack_ingredient = fridge_pantry
+        snack_array = all_recipe(snack_ingredient)
+    end
+
     # def fridge_pantry
     #     puts "What ingredient did you find ? :"
-    #     ingredient = gets.chomp
-    #     ingredient.to_s
-    #     Ingredient.create(name: ingredient)
+    #     snack_ingredient = gets.chomp
     # end
-=======
-    def fridge_pantry
-        puts "What ingredient did you find ? :"
-        ingredient = gets.chomp
-        Recipe.where(ingredients: ingredient).any?
-    end
->>>>>>> 6cb76693f9ec001a3002e60e5254b4619dedd628
+
+    # def all_recipe(snack_ingredient)
+    #     snack_array = []
+    #     Recipe.all.select do |recipe|
+    #         recipe.ingredients.split(",").find do |ingredient|
+    #             if ingredient.strip == snack_ingredient
+    #                 snack_array << recipe
+    #             end
+    #         end
+    #     end
+    # end
+
+
 
 
     def kitchen 
         ## Basically will be a textart that will be called in the front to make our image prettier 
         
-    end 
+    end
+
 
    
 
@@ -135,5 +144,5 @@ class CLI
 
 
 
-
-end #This is the end for the code 
+ #This is the end for the code 
+end
