@@ -8,8 +8,8 @@ This is our Mod1 project Midnight Snack. Midnight Snack is a command line recipe
 ## Snackers
 As a snacker you want to :
 * Enter within your returning account so we know its you and dont show you someone elses list
-* Enter the ingredient you found while raiding your fridge/pantry and get a list of ingredients
-* Add or delete recipes from your favorites
+* Enter the ingredient you found while raiding your fridge/pantry and get a list of snacks
+* Add or delete snacks from your favorites
 * Check your health and see if the amout of calories your recipes would create are above the recommended amount
 
 ## Instalation 
