@@ -8,7 +8,7 @@ def search
   snacker_recipes = view_recipes(snack_array, limit)
   choice = snack_menu 
   save_snack(snacker_recipes)
-  # recipe_menu
+  self.snacker_menu
   # display_menu
 end
 
@@ -65,7 +65,7 @@ def snack_menu
 end
 
 def favorites_has_recipe?(recipe)
-  @snacker.favorite_snacks.each do |fave|
+  @snacker.favorite_snacks.select do |fave|
     if fave.recipe_id == recipe.id
       true
     end
@@ -85,9 +85,11 @@ def save_snack(snacker_recipes)
   snack_choice = gets.chomp
   recipe = snacker_recipes[snack_choice.to_i-1]
   if favorites_has_recipe?(recipe)
-    puts "You've already saved this snack"
+    puts
+    puts "You've already saved this snack!"
   else
     @snacker.add_favorite_snack(recipe)
+    @snacker.favorite_snacks.reload
   end
 end
 

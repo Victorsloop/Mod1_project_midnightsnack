@@ -1,5 +1,5 @@
-# require 'pry'
-# require 'tty-prompt'
+require 'pry'
+require 'tty-prompt'
 
     def health 
     system("clear")
