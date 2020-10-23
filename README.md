@@ -21,8 +21,9 @@ As a snacker you want to :
 
 [Recipe Puppy API](http://www.recipepuppy.com/api/)
 
-[TTY-Prompt]
-[Ruby2d]
+[TTY-Prompt]https://ttytoolkit.org/ 
+[Ruby2d]https://www.ruby2d.com/
+[ASCIIart]https://asciiart.website/index.php?art=objects/furniture/beds
 
 
 

@@ -1,6 +1,3 @@
-# require 'rubygems'
-# require 'pry'
-
 def search
   system("clear")
   font = TTY::Font.new(:Doom)
@@ -39,7 +36,7 @@ def recipe_limit(snack_array, snack_ingredient)
   if snack_array.empty?
     puts "Sorry, there are no recipes with #{snack_ingredient}"
     puts "Look around some more."
-    search 
+    self.snacker_menu 
   end
   puts "There are #{snack_array.length} recipes with #{snack_ingredient} in them."
   puts "How many would you like to see?"
@@ -79,13 +76,6 @@ def favorites_has_recipe?(recipe)
   false
 end
 
-      
-
-
-# def add_favorite_snack(recipe)
-#   FavoriteSnack.create(snacker_id: self.id, recipe_id: recipe.id)
-# end
-
 def save_snack(snacker_recipes)
   puts "Enter the number of the recipe you'd like to save"
   snack_choice = gets.chomp
@@ -99,51 +89,4 @@ def save_snack(snacker_recipes)
   end
 end
 
-
-# def add_favorite_snack(recipe)
-#   FavoriteSnack.create(recipe_id: recipe.id, snacker_id: self.id)
-# end
-
-
-      
-      # def saved_favorites?(recipe)
-      #   # checks favorites to make sure it hasn't been added yet
-      #   username.favoritesnack.each do |fav|
-      #     if fav.recipe_id == recipe.id
-      #       return true
-      #     end
-      #   end
-      #   false
-      # end
-
-
-      # def search
-      #   snack_ingredient = fridge_pantry
-      #   recipes = all_recipe
-      #   snacker_recipes = view_recipes(all_recipe, limit)
-      #   choices = recipe_menu
-      #   recipe_menu
-      #   display_menu 
-      # end
-      
-
-
 end
-
-# Simple Search
-# steakrecipes = RecipePuppy::Recipe.search_for("steak")
-# steakrecipes.get['results'].each do |recipe|
-#   puts recipe['title']
-#   puts recipe['href']
-#   puts recipe['ingredients']
-#   puts recipe['thumbnail']
-# end
-
-# eggrecipes = RecipePuppy::Recipe.search_for("eggs, butter, salt")
-# eggrecipes.get['results'].each do |recipe|
-#      Recipe.create(
-#        name: recipe['title']
-#     puts recipe['ingredients']
-#     # puts "What recipe would you like to save?"
-#     # saved_recipe = gets.chomp
-# end

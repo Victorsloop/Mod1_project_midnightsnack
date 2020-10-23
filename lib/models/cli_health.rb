@@ -13,9 +13,10 @@ require 'tty-prompt'
            total_cal
         elsif comfirmation == "no"
             sleep(1.5)
-            puts "Im sorry but you need to know"
+            puts "Im sorry but you need to know, the dark truth of your horrible snacks"
             sleep(1.0)
-            puts "same method you would recieve for saying yes"
+            total_cal
+            puts "Youll exceed the recomended amount for the day"
         end 
     end ## end of that code 
 
@@ -24,6 +25,7 @@ require 'tty-prompt'
         weight.each_with_index do |fave, i|
             recipe = Recipe.find(fave.recipe_id)
             puts "#{i+1}. #{recipe.name} #{recipe.calories}"
+            sleep(1.0)
         end
         self.snacker_menu
     end
@@ -38,21 +40,3 @@ require 'tty-prompt'
     #         end
     #     end # End of the code 
     # end
-
-
-    def gain ## Just funny methods we might use 
-    end 
-
-    def treat_your_self  ## another funny method we might use   
-    end 
-
-    # def get_favorite_calories(favorites)
-    #     favorites = @snacker.favorite_snacks.reload
-    #     favorites.each_with_index do |fave, i|
-    #       recipe = Recipe.find(fave.recipe_id)
-    #       binding.pry 
-    #     end
-    #     puts "Which recipe would you like to remove from favorites? "
-    #     rec_num = gets.chomp.to_i
-    #     recipe = Recipe.find(favorites[rec_num-1].recipe_id)
-    #   end

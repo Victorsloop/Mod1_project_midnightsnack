@@ -6,7 +6,7 @@ def view_my_favorites
   sleep(0.5)
   fav = @snacker.favorite_snacks.reload
   if fav.empty?
-    puts "You don't have any favorite recipies saved yet!"
+    puts "You don't have any favorite recipes saved yet!"
     puts "Choose a different option"
     self.snacker_menu
   else
@@ -21,8 +21,3 @@ def view_my_favorites
     self.snacker_menu
   end
 end
-
-  # def add_favorite_snack(recipe)
-  #   fave_snack = FavoriteSnack.create(recipe_id: recipe.id, snacker_id: self.id)
-  # end
-

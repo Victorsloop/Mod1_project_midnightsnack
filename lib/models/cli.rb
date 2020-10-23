@@ -14,6 +14,7 @@ class CLI
     private
     def welcome
         system("clear")
+        puts creators
         puts "Youre back .. again ?"
         sleep(0.5)
         font = TTY::Font.new(:Doom)
@@ -21,7 +22,6 @@ class CLI
         puts pastel.blue(font.write ("Midnight Snack"))
     end
 
-# LOGIN MENU
 
     def self.menu
         prompt = TTY::Prompt.new
@@ -85,6 +85,7 @@ class CLI
         @snacker = nil
         sleep(1.0)
         puts "Have a good night ."
+        puts bed 
         prompt.keypress("\nPress r to return to main menu.", keys: [:"r", :return])
         CLI.menu
     end
