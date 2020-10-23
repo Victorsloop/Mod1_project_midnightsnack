@@ -1,4 +1,9 @@
 def view_my_favorites
+  system("clear")
+  font = TTY::Font.new(:Doom)
+  pastel = Pastel.new
+  puts pastel.green(font.write ("Favorites"))
+  sleep(0.5)
   fav = @snacker.favorite_snacks.reload
   if fav.empty?
     puts "You don't have any favorite recipies saved yet!"
