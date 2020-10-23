@@ -3,7 +3,7 @@ def get_recipe_to_delete
   favorites = @snacker.favorite_snacks.reload
   # binding.pry
   fav_to_delete = display_faves(favorites)
-  # binding.pry
+  binding.pry
   @snacker.delete_from_favorites(fav_to_delete)
   self.snacker_menu
 end
@@ -20,27 +20,3 @@ def display_faves(favorites)
   rec_num = gets.chomp.to_i
   recipe = Recipe.find(favorites[rec_num-1].recipe_id)
 end
-
-
-
-#   puts "Which recipe would you like to remove from your favorites? "
-#   delete_recipe = gets.chomp
-#   recipe = favorites[delete_recipe.to_i-1]
-#   @snacker.delete_from_favorites(recipe)
-#     snack_to_delete = FavoriteSnack.where(recipe_id: recipe.id, snacker_id: self.id)
-#     FavoriteSnack.destroy(snack_to_delete)
-# end
-
-    
-  
-  # recipe = snacker_recipes[snack_choice.to_i-1]
-
-  # recipe = Recipe.find(favorites[rec_num-1].recipe_id)
-  #   print "Confirm deletion of #{recipe.name}? (y/n) "
-  #    choice= gets.chomp
-  #   if choice == "y"
-  #     recipe
-  #   else 
-  #       self.snacker_menu 
-  #   end
-  # end
