@@ -33,4 +33,3 @@
 
     def treat_your_self  ## another funny method we might use   
     end 
-end 

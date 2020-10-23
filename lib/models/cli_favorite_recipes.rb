@@ -1,10 +1,10 @@
 def my_favorites
-    favorites = @snacker.favorite_snacks.reload 
+    favorites = @snacker.favorite_snacks
   
     if favorites.empty?
       puts "You don't have any favorite recipies saved yet!"
       puts "Choose a different option"
-      display_menu
+      self.snacker_menu
     else
       puts "Here are your favorite recipes:"
       i = 1
@@ -15,7 +15,7 @@ def my_favorites
         sleep(0.5)
       end
       puts "Returning to main menu..."
-      display_menu
+      self.snacker_menu
     end
   
   end
