@@ -8,18 +8,22 @@ require 'tty-prompt'
         puts pastel.red(font.write ("hEaLtH"))
         sleep(0.5)
         prompt = TTY::Prompt.new
-        comfirmation = Prompt.ask("Are you sure you want to know?...yes/no")
+        comfirmation = prompt.ask("Are you sure you want to know?...yes/no")
         if comfirmation == "yes"
-           puts "returns methods with sad or good news"
+           total_cal
         elsif comfirmation == "no"
+            sleep(1.5)
             puts "Im sorry but you need to know"
+            sleep(1.0)
             puts "same method you would recieve for saying yes"
         end 
     end ## end of that code 
 
     def total_cal
-        weight =  Snacker.my_favorites.map{|total| total.calories}.sum
+        weight = @snacker.favorite_snacks.reload
+        weight.collect{|total|total.recipes.calorie}.sum
         if weight > 1400
+            sleep(0.5)
             puts "Youre gaining weight you might have to slow down"
             puts "Youve exceeded the recomended amount for the day 🤯"
         elsif 

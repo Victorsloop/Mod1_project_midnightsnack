@@ -32,8 +32,8 @@ end
 
 def recipe_limit(snack_array, snack_ingredient)
   if snack_array.empty?
-    puts "Sorry, there are no snacks with #{snack_ingredient}"
-    puts "Try another snack."
+    puts "Sorry, there are no recipes with #{snack_ingredient}"
+    puts "Look around some more."
     search 
   end
   puts "There are #{snack_array.length} snacks with #{snack_ingredient} in them."
@@ -93,23 +93,11 @@ def save_snack(snacker_recipes)
   end
 end
 
-# def view_favorite_snacks
-#     @snacker.favoritesnacks
-# end
-
-# binding.pry
 
 # def add_favorite_snack(recipe)
 #   FavoriteSnack.create(recipe_id: recipe.id, snacker_id: self.id)
 # end
 
-
-
-
-
-# def save_a_fave_snack(snacker_recipes, )
-#   binding.pry
-# end
 
       
       # def saved_favorites?(recipe)
@@ -135,12 +123,6 @@ end
 
 
 end
-
-# binding.pry
-
-
-# def recipie_search
-# end 
 
 # Simple Search
 # steakrecipes = RecipePuppy::Recipe.search_for("steak")

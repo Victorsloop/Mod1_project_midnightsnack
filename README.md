@@ -1,11 +1,33 @@
-# Module One Final Project Guidelines
+# Midnight Snack
 
-Congratulations, you're at the end of module one! You've worked crazy hard to get here and have learned a ton.
+### Sean Delaney & Victor Torres
 
-For your final project, we'll be building a Command Line database application.
+This is our Mod1 project Midnight Snack. Midnight Snack is a command line recipe search that allows the snacker to search for recipes based on the ingredients that they may find. They can save those recipes to their favorites and even interact with them.
 
-## Project Requirements
 
+## Snackers
+As a snacker you want to :
+* Enter within your returning account so we know its you and dont show you someone elses list
+* Enter the ingredient you found while raiding your fridge/pantry and get a list of ingredients
+* Add or delete recipes from your favorites
+* Check your health and see if the amout of calories your recipes would create are above the recommended amount
+
+## Instalation 
+1. Clone the repository
+2. Run bundle install to update neccessary gems
+3. Now run ruby bun/run.rb to start and create your snacker life !! 
+
+## Sources 
+
+[Recipe Puppy API](http://www.recipepuppy.com/api/)
+
+[TTY-Prompt]
+[Ruby2d]
+
+
+
+<!-- ## Project Requirements
+  
 ### Option One - Data Analytics Project
 
 1. Access a Sqlite3 Database using ActiveRecord.
@@ -56,4 +78,4 @@ Projects need to be approved prior to launching into them, so take some time to 
 ```ruby
 # in config/environment.rb add this line:
 ActiveRecord::Base.logger = nil
-```
+``` -->

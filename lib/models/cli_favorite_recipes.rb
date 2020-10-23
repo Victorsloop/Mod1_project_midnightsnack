@@ -10,7 +10,7 @@ def view_my_favorites
     fav.each do |fave|
       puts "#{i}. #{fave.name}"
       i += 1
-      sleep(0.5)
+      sleep(1.0)
     end
     puts "Returning to main menu..."
     self.snacker_menu

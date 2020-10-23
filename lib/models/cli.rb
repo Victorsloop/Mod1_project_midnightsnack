@@ -83,6 +83,7 @@ class CLI
     def self.go_to_bed
         prompt = TTY::Prompt.new
         @snacker = nil
+        sleep(1.0)
         puts "Have a good night ."
         prompt.keypress("\nPress r to return to main menu.", keys: [:"r", :return])
         CLI.menu
@@ -92,7 +93,7 @@ class CLI
     def self.snacker_menu
         prompt = TTY::Prompt.new
         puts "Welcome back #{@snacker.username}!!!"
-        select = prompt.select("What would you like to do?") do |menu|
+        select = prompt.select("What would you like to do?",active_color: :red) do |menu|
             menu.choice 'Go through your fridge/pantry'
             menu.choice 'Favorite Recipes'
             menu.choice 'hEaLtH'
@@ -103,9 +104,8 @@ class CLI
             search
         elsif select == 'Favorite Recipes'
             view_my_favorites
-
-        elsif  select  == 'hEaLtH'
-            puts "Will count those calories"
+         elsif  select  == 'hEaLtH'
+            health
         elsif   select  == 'Delete Recipes'
             puts "will delete them recipes "
             get_recipe_to_delete
