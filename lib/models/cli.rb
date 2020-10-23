@@ -2,7 +2,7 @@ require 'pry'
 require 'tty-prompt'
 class CLI 
 
-    attr_accessor :snacker, :recipie, :favoritesnack
+    attr_accessor :snacker, :recipe, :favoritesnack
     #@@prompt = TTY::Prompt.new
     #@@user = nil 
 
@@ -94,19 +94,21 @@ class CLI
         puts "Welcome back #{@snacker.username}!!!"
         select = prompt.select("What would you like to do?") do |menu|
             menu.choice 'Go through your fridge/pantry'
-            menu.choice 'Favorite Recipies'
+            menu.choice 'Favorite Recipes'
             menu.choice 'hEaLtH'
-            menu.choice 'Delete Recipies'
+            menu.choice 'Delete Recipes'
             menu.choice 'Go to bed..'
         end
         if select == "Go through your fridge/pantry"
             search
-        elsif select == 'Favorite Recipies'
-            my_favorites
+        elsif select == 'Favorite Recipes'
+            view_my_favorites
+
         elsif  select  == 'hEaLtH'
             puts "Will count those calories"
-        elsif   select  == 'Delete Recipies'
-            puts "will delete them recipies "
+        elsif   select  == 'Delete Recipes'
+            puts "will delete them recipes "
+            get_recipe_to_delete
         elsif select == "Go to bed.."
             system("clear")
             CLI.go_to_bed
