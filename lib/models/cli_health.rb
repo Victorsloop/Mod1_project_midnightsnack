@@ -20,8 +20,9 @@ require 'tty-prompt'
     end ## end of that code 
 
     def total_cal
-        weight = @snacker.favorite_snacks.reload
-        weight.map{|total|total.recipes.calories}.sum
+        weight =[]
+        weight<< @snacker.favorite_snacks.calories.reload
+        weight.map{|total|total.calorie}.sum
         if weight > 1400
             sleep(0.5)
             puts "Youre gaining weight you might have to slow down"
