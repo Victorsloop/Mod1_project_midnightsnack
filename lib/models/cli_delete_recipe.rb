@@ -8,7 +8,7 @@ def get_recipe_to_delete
   favorites = @snacker.favorite_snacks.reload
   # binding.pry
   fav_to_delete = display_faves(favorites)
-  binding.pry
+  # binding.pry
   @snacker.delete_from_favorites(fav_to_delete)
   self.snacker_menu
 end
