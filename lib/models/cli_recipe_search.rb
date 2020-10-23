@@ -8,7 +8,7 @@ def search
   snacker_recipes = view_recipes(snack_array, limit)
   choice = snack_menu 
   save_snack(snacker_recipes)
-  # recipe_menu
+  self.snacker_menu
   # display_menu
 end
 
@@ -88,6 +88,7 @@ def save_snack(snacker_recipes)
     puts "You've already saved this snack"
   else
     @snacker.add_favorite_snack(recipe)
+    @snacker.favorite_snacks.reload
   end
 end
 

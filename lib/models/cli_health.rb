@@ -1,5 +1,5 @@
-# require 'pry'
-# require 'tty-prompt'
+require 'pry'
+require 'tty-prompt'
 
     def health 
     system("clear")
@@ -33,4 +33,3 @@
 
     def treat_your_self  ## another funny method we might use   
     end 
-end 

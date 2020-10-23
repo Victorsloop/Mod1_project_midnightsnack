@@ -14,6 +14,6 @@ def display_faves(fav)
     if choice == "y"
       recipe
     else 
-        display_menu 
+        self.snacker_menu 
     end
   end
