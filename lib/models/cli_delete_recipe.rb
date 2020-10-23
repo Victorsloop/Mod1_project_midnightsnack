@@ -1,5 +1,10 @@
 # ### Basically have to call out the favorites , and allow them to choose which ones to delte 
 def get_recipe_to_delete
+  system("clear")
+  font = TTY::Font.new(:Doom)
+  pastel = Pastel.new
+  puts pastel.cyan(font.write ("Deleting favs"))
+  sleep(0.5)
   favorites = @snacker.favorite_snacks.reload
   # binding.pry
   fav_to_delete = display_faves(favorites)

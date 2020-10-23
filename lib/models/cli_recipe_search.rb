@@ -2,6 +2,11 @@
 # require 'pry'
 
 def search
+  system("clear")
+  font = TTY::Font.new(:Doom)
+  pastel = Pastel.new
+  puts pastel.yellow(font.write ("Searching....."))
+  sleep(0.5)
   snack_ingredient = fridge_pantry
   snack_array = all_recipe(snack_ingredient)
   limit = recipe_limit(snack_array, snack_ingredient)
@@ -36,7 +41,7 @@ def recipe_limit(snack_array, snack_ingredient)
     puts "Look around some more."
     search 
   end
-  puts "There are #{snack_array.length} snacks with #{snack_ingredient} in them."
+  puts "There are #{snack_array.length} recipes with #{snack_ingredient} in them."
   puts "How many would you like to see?"
   snack_limit = gets.chomp
 end
@@ -44,6 +49,7 @@ end
 def view_recipes(snack_array, limit)
   puts "Here are your recipes!"
   snack_array[0...limit.to_i].each_with_index do |recipe, i|
+    sleep(1.0)
     puts "#{i+1}. #{recipe.name}"
     puts "#{recipe.ingredients}"
   end
@@ -52,7 +58,7 @@ end
 def snack_menu
   puts "Please choose one:"
   puts "1. Return to main menu"
-  puts "2. Save a snack to favorites"
+  puts "2. Save a recipe to favorites"
   choice = gets.chomp
   if choice == 1
     self.snacker_menu ## Returns to start
@@ -81,12 +87,12 @@ end
 # end
 
 def save_snack(snacker_recipes)
-  puts "Enter the number of the snack you'd like to save"
+  puts "Enter the number of the recipe you'd like to save"
   snack_choice = gets.chomp
   recipe = snacker_recipes[snack_choice.to_i-1]
   if favorites_has_recipe?(recipe)
     puts
-    puts "You've already saved this snack!"
+    puts "You've already saved this recipe!"
   else
     @snacker.add_favorite_snack(recipe)
     @snacker.favorite_snacks.reload
